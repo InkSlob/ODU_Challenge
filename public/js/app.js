@@ -36,7 +36,7 @@ angular.module("contactsApp", ['ngRoute'])
                 then(function(response) {
                     return response;
                 }, function(response) {
-                    alert("Error creating contact -WOW-.");
+                    alert("Error creating contact.");
                 });
         }
         this.getContact = function(contactId) {
