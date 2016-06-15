@@ -6,32 +6,32 @@
 <div class="container">
   <div>
     <p>
-      <label>Group Name</label> 
-      <input id="name" class="form-control" type="text" ng-model="contact.firstName" required> 
+      <label>Group Name*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.GroupName" required> 
     </p>
     <p>
-      <label>Member 1 Name</label> 
-      <input id="name" class="form-control" type="text" ng-model="contact.lastName" required> 
+      <label>Member 1 Name*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member1" required> 
     </p>
     <p>
-      <label>Member 2 Name</label> 
-      <input id="name" class="form-control" type="text" ng-model="contact.email" required> 
+      <label>Member 2 Name*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member2" required> 
     </p>
     <p>
       <label>Member 3 Name</label> 
-      <input id="name" class="form-control" type="text" ng-model="contact.phone.mobile"> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member3"> 
     </p>
     <p>
       <label>Member 4 Name</label> 
-      <input id="name" class="form-control" type="text" ng-model="contact.phone.work"> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member4"> 
     </p>
     <p>
-      <label>Topic of Research</label> 
-      <input id="name" class="form-control" type="text" ng-model="contact.address"> 
+      <label>Topic of Research*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.topic" required> 
     </p>
     <p>
       <label>Project Title</label> 
-      <input id="name" class="form-control" type="text" ng-model="contact.twitter"> 
+      <input id="name" class="form-control" type="text" ng-model="contact.title"> 
     </p>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="saveContact(contact)">Save</button>
