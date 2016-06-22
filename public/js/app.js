@@ -18,6 +18,12 @@ angular.module("contactsApp", ['ngRoute'])
                 controller: "EditContactController",
                 templateUrl: "contact.html"
             })
+			// added by jesse 6/22
+			.when("/new/progress", {
+				controller: "NewProgressReportController",
+				templateUrl: "progress-form.html"
+			})			
+			// end add
             .otherwise({
                 redirectTo: "/"
             })
@@ -98,6 +104,7 @@ angular.module("contactsApp", ['ngRoute'])
             $scope.editMode = true;
             $scope.contactFormUrl = "contact-form.html";
         }
+		
 
         $scope.back = function() {
             $scope.editMode = false;

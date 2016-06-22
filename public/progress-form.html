@@ -1,0 +1,41 @@
+<div class="row" ng-hide="contact._id">
+  <div class="col-md-6">
+      <h2>Create a Daily Progress Report</h2>
+  </div>
+</div>
+<div class="container">
+  <div>
+    <p>
+      <label>Group Name*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.GroupName" required> 
+    </p>
+    <p>
+      <label>Date*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member1" required> 
+    </p>
+    <p>
+      <label>Key Item 1 Accomplished*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member2" required> 
+    </p>
+    <p>
+      <label>Key Item 2 Accomplished</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member3"> 
+    </p>
+    <p>
+      <label>Key Item 3 Accomplished</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.member4"> 
+    </p>
+    <p>
+      <label>Goals for Tomorrow*</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.topic" required> 
+    </p>
+    <p>
+      <label>Current Challenge Focus</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.title"> 
+    </p>
+    <p>
+      <button style="margin-top:20px" class="btn btn-default" ng-click="saveContact(contact)">Save</button>
+      <button style="margin-top:20px" class="btn btn-default" ng-click="back()">Cancel</button>
+    </p>
+  </div>
+</div>
