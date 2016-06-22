@@ -114,7 +114,7 @@ angular.module("contactsApp", ['ngRoute'])
                 });
         }
     })
-	.controller("ListController", function(contacts,progressReports, $scope) {
+	.controller("ListController",["contacts","progressReports", function(contacts,progressReports, $scope) {
         $scope.contacts = contacts.data;
 		$scope.progressReports = progressReports.data;
     })
