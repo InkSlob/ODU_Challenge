@@ -66,7 +66,7 @@ angular.module("contactsApp", ['ngRoute'])
 		this.editProgressReport = function(progressReport) {
              var url = "/progress/" + progressId;
             console.log(progress._id);
-            return $http.put(url, progress).
+            return $http.put(url, p).
                 then(function(response) {
                     return response;
                 }, function(response) {
