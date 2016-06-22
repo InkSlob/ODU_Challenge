@@ -5,9 +5,11 @@ angular.module("contactsApp", ['ngRoute'])
                 templateUrl: "list.html",
                 controller: "ListController",
                 resolve: {
-                   
+                    contacts: function(Contacts) {
+                        return Contacts.getContacts();
+                    },
 					progressReports: function(Progress) {
-						return Progress.getProgressReports().data;
+						return Progress.getProgressReports();
 					}
                 }
             })
@@ -112,10 +114,10 @@ angular.module("contactsApp", ['ngRoute'])
                 });
         }
     })
-	.controller("ListController", function(progressReports, $scope) {
-       // $scope.contacts = contacts.data;
-		$scope.progressReports = progressReports;
-    })
+	.controller("ListController",["contacts","progressReports", function(contacts,progressReports, $scope) {
+        $scope.contacts = contacts.data;
+		$scope.progressReports = progressReports.data;
+    }])
 	 .controller("EditProgressController", function($scope, $routeParams, Progress) {
         Progress.getProgressReport($routeParams.progessId).then(function(doc) {
             $scope.progressReport = doc.data;
@@ -130,10 +132,6 @@ angular.module("contactsApp", ['ngRoute'])
             $scope.editMode = false;
             $scope.contactFormUrl = "";
         } 
-    })
-    .controller("ListController", function(contacts, $scope) {
-        $scope.contacts = contacts.data;
-		$scope.progressReports = progressReports.data;
     })
     .controller("NewContactController", function($scope, $location, Contacts) {
         $scope.back = function() {
