@@ -181,20 +181,7 @@ angular.module("contactsApp", ['ngRoute'])
         }
     })
 	// added 6/22  jesse
-	.controller("NewProgressReportController", function($scope, $location, Progress) {
-		$scope.back = function() {
-			$location.path("#/");
-		}
-		
-		$scope.saveProgress = function(progressReport) {
-			Progress.createProgressReport(progressReport).then(function(doc) {
-				var progressUrl = "/progress/" + doc.data._id;
-				$location.path(progressUrl);
-			}, function(response) {
-				alert(response);
-			});
-		}
-	})
+	
 	// end add
     .controller("EditContactController", function($scope, $routeParams, Contacts) {
         Contacts.getContact($routeParams.contactId).then(function(doc) {
