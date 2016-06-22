@@ -63,6 +63,27 @@ angular.module("contactsApp", ['ngRoute'])
                     alert("Error finding this contact.");
                 });
         }
+		this.editProgressReport = function(progressReport) {
+             var url = "/progress/" + progressId;
+            console.log(progress._id);
+            return $http.put(url, progress).
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error editing this contact.");
+                    console.log(response);
+                });
+        }
+        this.deleteProgressReport = function(progressId) {
+             var url = "/progress/" + progressId;
+            return $http.delete(url).
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error deleting this contact.");
+                    console.log(response);
+                });
+        }
 		 
 		 
 	 })
@@ -132,6 +153,18 @@ angular.module("contactsApp", ['ngRoute'])
             $scope.editMode = false;
             $scope.contactFormUrl = "";
         } 
+		
+		 $scope.saveProgress = function(progress) {
+            Progress.editProgress(progress);
+            $scope.editMode = false;
+            $scope.contactFormUrl = "";
+        }
+
+        $scope.deleteContact = function(contactId) {
+            Contacts.deleteContact(contactId);
+        }
+		
+		
     })
     .controller("NewContactController", function($scope, $location, Contacts) {
         $scope.back = function() {
