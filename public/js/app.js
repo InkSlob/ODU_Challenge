@@ -5,9 +5,9 @@ angular.module("contactsApp", ['ngRoute'])
                 templateUrl: "list.html",
                 controller: "ListController",
                 resolve: {
-                    contacts: function(Contacts) {
-                        return Contacts.getContacts();
-                    },
+                    // contacts: function(Contacts) {
+                        // return Contacts.getContacts();
+                    // },
 					progressReports: function(Progress) {
 						return Progress.getProgressReports().data;
 					}
@@ -115,7 +115,7 @@ angular.module("contactsApp", ['ngRoute'])
         }
     })
 	.controller("ListController",["contacts","progressReports", function(contacts,progressReports, $scope) {
-        $scope.contacts = contacts.data;
+       // $scope.contacts = contacts.data;
 		$scope.progressReports = progressReports;
     }])
 	 .controller("EditProgressController", function($scope, $routeParams, Progress) {
