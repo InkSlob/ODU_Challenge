@@ -5,6 +5,7 @@ var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
 var CONTACTS_COLLECTION = "contacts";
+var PROGRESS_COLLECTION = "progress";
 
 var app = express();
 app.use(express.static(__dirname + "/public"));
@@ -54,6 +55,17 @@ app.get("/contacts", function(req, res) {
   });
 });
 
+app.get("/progress", function(req, res) {
+  db.collection(PROGRESS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get contacts.");
+    } else {
+      res.status(200).json(docs);  
+    }
+  });
+});
+
+
 app.post("/contacts", function(req, res) {
   var newContact = req.body;
   newContact.createDate = new Date();
@@ -71,6 +83,24 @@ app.post("/contacts", function(req, res) {
   });
 });
 
+app.post("/progress", function(req, res) {
+  var newContact = req.body;
+  newContact.createDate = new Date();
+
+  if (!(req.body.GroupName)) {
+    handleError(res, "Invalid user input", "Must provide a group name.", 400);
+  }
+
+  db.collection(PROGRESS_COLLECTION).insertOne(newContact, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to create new progress report.");
+    } else {
+      res.status(201).json(doc.ops[0]);
+    }
+  });
+});
+
+
 /*  "/contacts/:id"
  *    GET: find contact by id
  *    PUT: update contact by id
@@ -81,6 +111,16 @@ app.get("/contacts/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get contact");
+    } else {
+      res.status(200).json(doc);  
+    }
+  });
+});
+
+app.get("/progress/:id", function(req, res) {
+  db.collection(PROGRESS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get progress report");
     } else {
       res.status(200).json(doc);  
     }
@@ -100,10 +140,33 @@ app.put("/contacts/:id", function(req, res) {
   });
 });
 
+app.put("/progress/:id", function(req, res) {
+  var updateDoc = req.body;
+  delete updateDoc._id;
+
+  db.collection(PROGRESS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to update progress report");
+    } else {
+      res.status(204).end();
+    }
+  });
+});
+
 app.delete("/contacts/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete contact");
+    } else {
+      res.status(204).end();
+    }
+  });
+});
+
+app.delete("/progress/:id", function(req, res) {
+  db.collection(PROGRESS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    if (err) {
+      handleError(res, err.message, "Failed to delete progress report");
     } else {
       res.status(204).end();
     }
