@@ -93,6 +93,22 @@ angular.module("contactsApp", ['ngRoute'])
             });
         }
     })
+	// added 6/22  jesse
+	.controller("NewProgressReportController", function($scope, $location, Contacts) {
+		$scope.back = function() {
+			$location.path("#/");
+		}
+		
+		$scope.saveContact = function(contact) {
+			Contacts.createContact(contact).then(function(doc) {
+				var progressUrl = "/progress/" + doc.data._id;
+				$location.path(progressUrl);
+			}, function(response) {
+				alert(response);
+			});
+		}
+	})
+	// end add
     .controller("EditContactController", function($scope, $routeParams, Contacts) {
         Contacts.getContact($routeParams.contactId).then(function(doc) {
             $scope.contact = doc.data;
