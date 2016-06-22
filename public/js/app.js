@@ -7,7 +7,7 @@ angular.module("contactsApp", ['ngRoute'])
                 resolve: {
                     contacts: function(Contacts) {
                         return Contacts.getContacts();
-                    }
+                    },
 					progressReports: function(Progress) {
 						return Progress.getProgressReports();
 					}
