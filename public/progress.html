@@ -1,26 +1,26 @@
 <div class = "row">
   <div class="col-md-6">
     <h3>
-      <ul>Group Name: {{ contact.GroupName }}</ul>
-	  <ul>Title of Research: {{ contact.title }}</ul>
+      <ul>Group Name: {{ progressReport.GroupName }}</ul>
+	  <ul>Title of Research: {{ progressReport.title }}</ul>
     </h3>
   </div>
   <div class="col-md-3">
   </div>
   <div class="col-md-2">
-    <a href="#/"><button style="margin-top:20px" class="btn btn-default" ng-click="deleteContact(contact._id)">Delete</button></a>
+    <a href="#/"><button style="margin-top:20px" class="btn btn-default" ng-click="deleteContact(progressReport._id)">Delete</button></a>
   </div>
   <div class="col-md-1">
   </div>
 </div>
 <div ng-hide="editMode" class="container">
   <div>
-    <p ng-if="contact.member1">Member: {{ contact.member1 }}</p>
-    <p ng-if="contact.member2"> Member: {{ contact.member2 }} </p>
-    <p ng-if="contact.member3"> Member: {{ contact.member3 }} </p>
-    <p ng-if="contact.member4"> Member: {{ contact.member4 }} </p>
-    <p ng-if="contact.topic"> Topic: {{ contact.topic }} </p>
-	<p ng-if="contact.title"> Title: {{ contact.title }} </p>
+    <p ng-if="progressReport.member1">Member: {{ progressReport.member1 }}</p>
+    <p ng-if="progressReport.member2"> Member: {{ progressReport.member2 }} </p>
+    <p ng-if="progressReport.member3"> Member: {{ progressReport.member3 }} </p>
+    <p ng-if="progressReport.member4"> Member: {{ progressReport.member4 }} </p>
+    <p ng-if="progressReport.topic"> Topic: {{ progressReport.topic }} </p>
+	<p ng-if="progressReport.title"> Title: {{ progressReport.title }} </p>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="toggleEdit()">Edit</button>
       <a style="margin-top:20px" class="btn btn-default" href="#/">Back</a>

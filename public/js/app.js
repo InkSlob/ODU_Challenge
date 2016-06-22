@@ -8,6 +8,8 @@ angular.module("contactsApp", ['ngRoute'])
                     contacts: function(Contacts) {
                         return Contacts.getContacts();
                     }
+					progressReports: function(Progress) {
+						return Progress.getProgressReports();
                 }
             })
             .when("/new/contact", {
@@ -22,12 +24,47 @@ angular.module("contactsApp", ['ngRoute'])
 			.when("/new/progress", {
 				controller: "NewProgressReportController",
 				templateUrl: "progress-form.html"
-			})			
+			})
+			 .when("/progress/:progessId", {
+                controller: "EditProgressController",
+                templateUrl: "progress.html"
+            })
 			// end add
             .otherwise({
                 redirectTo: "/"
             })
     })
+	 .service("Progress", function($http) {
+		 
+		   this.getProgressReports = function() {
+            return $http.get("/progress").
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error finding contacts.");
+                });
+        }
+		   this.createProgressReport = function(progressReport) {
+            return $http.post("/progress", progressReport).
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error creating contact.");
+                });
+        }
+		
+		 this.getProgressReport = function(progressId) {
+            var url = "/progress/" + progressId;
+            return $http.get(url).
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error finding this contact.");
+                });
+        }
+		 
+		 
+	 })
     .service("Contacts", function($http) {
         this.getContacts = function() {
             return $http.get("/contacts").
@@ -76,8 +113,28 @@ angular.module("contactsApp", ['ngRoute'])
                 });
         }
     })
+	.controller("ListController", function(contacts, $scope) {
+        $scope.contacts = contacts.data;
+		$scope.progressReports = progressReports.data;
+    })
+	 .controller("EditProgressController", function($scope, $routeParams, Progress) {
+        Progress.getProgressReport($routeParams.progessId).then(function(doc) {
+            $scope.progressReport = doc.data;
+        }, function(response) {
+            alert(response);
+        });
+        $scope.toggleEdit = function() {
+            $scope.editMode = true;
+            $scope.contactFormUrl = "progress-form.html";
+        }
+        $scope.back = function() {
+            $scope.editMode = false;
+            $scope.contactFormUrl = "";
+        } 
+    })
     .controller("ListController", function(contacts, $scope) {
         $scope.contacts = contacts.data;
+		$scope.progressReports = progressReports.data;
     })
     .controller("NewContactController", function($scope, $location, Contacts) {
         $scope.back = function() {
@@ -94,13 +151,13 @@ angular.module("contactsApp", ['ngRoute'])
         }
     })
 	// added 6/22  jesse
-	.controller("NewProgressReportController", function($scope, $location, Contacts) {
+	.controller("NewProgressReportController", function($scope, $location, Progress) {
 		$scope.back = function() {
 			$location.path("#/");
 		}
 		
-		$scope.saveContact = function(contact) {
-			Contacts.createContact(contact).then(function(doc) {
+		$scope.saveProgress = function(progressReport) {
+			Progress.createProgressReport(progressReport).then(function(doc) {
 				var progressUrl = "/progress/" + doc.data._id;
 				$location.path(progressUrl);
 			}, function(response) {

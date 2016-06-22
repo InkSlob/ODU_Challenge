@@ -23,4 +23,16 @@
       </tr>
     </tbody>
   </table>
+  
+   <table class="table table-hover">
+    <tbody>
+      <tr ng-repeat="progressReport in progressReports" style="cursor:pointer">
+        <td>
+          <a ng-href="#/progressReport/{{progressReport._id}}">{{ progressReport.GroupName }}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
 </div>
