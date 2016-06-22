@@ -114,10 +114,10 @@ angular.module("contactsApp", ['ngRoute'])
                 });
         }
     })
-	.controller("ListController",["contacts","progressReports", function(contacts,progressReports, $scope) {
+	.controller("ListController",function(contacts,progressReports, $scope) {
         $scope.contacts = contacts.data;
 		$scope.progressReports = progressReports.data;
-    }])
+    })
 	 .controller("EditProgressController", function($scope, $routeParams, Progress) {
         Progress.getProgressReport($routeParams.progessId).then(function(doc) {
             $scope.progressReport = doc.data;
