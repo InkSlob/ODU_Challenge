@@ -10,6 +10,7 @@ angular.module("contactsApp", ['ngRoute'])
                     }
 					progressReports: function(Progress) {
 						return Progress.getProgressReports();
+					}
                 }
             })
             .when("/new/contact", {
