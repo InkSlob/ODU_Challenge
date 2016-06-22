@@ -9,7 +9,7 @@ angular.module("contactsApp", ['ngRoute'])
                         return Contacts.getContacts();
                     },
 					progressReports: function(Progress) {
-						return Progress.getProgressReports();
+						return Progress.getProgressReports().data;
 					}
                 }
             })
@@ -116,7 +116,7 @@ angular.module("contactsApp", ['ngRoute'])
     })
 	.controller("ListController",["contacts","progressReports", function(contacts,progressReports, $scope) {
         $scope.contacts = contacts.data;
-		$scope.progressReports = progressReports.data;
+		$scope.progressReports = progressReports;
     }])
 	 .controller("EditProgressController", function($scope, $routeParams, Progress) {
         Progress.getProgressReport($routeParams.progessId).then(function(doc) {
