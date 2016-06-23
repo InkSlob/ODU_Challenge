@@ -83,8 +83,6 @@ angular.module("contactsApp", ['ngRoute'])
                     console.log(response);
                 });
         }
-		 
-		 
 	 })
     .service("Contacts", function($http) {
         this.getContacts = function() {
@@ -153,8 +151,8 @@ angular.module("contactsApp", ['ngRoute'])
             $scope.contactFormUrl = "";
         } 
 		
-		 $scope.saveProgress = function(progress) {
-            Progress.editProgress(progress);
+		 $scope.saveProgress = function(progressReport) {
+            Progress.editProgress(progressReport);
             $scope.editMode = false;
             $scope.contactFormUrl = "";
         }
