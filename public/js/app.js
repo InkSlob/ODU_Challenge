@@ -144,21 +144,21 @@ angular.module("contactsApp", ['ngRoute'])
         });
         $scope.toggleEdit = function() {
             $scope.editMode = true;
-            $scope.contactFormUrl = "progress-form.html";
+            $scope.progressFormUrl = "progress-form.html";
         }
         $scope.back = function() {
             $scope.editMode = false;
-            $scope.contactFormUrl = "";
+            $scope.progressFormUrl = "";
         } 
 		
 		 $scope.saveProgress = function(progressReport) {
             Progress.editProgress(progressReport);
             $scope.editMode = false;
-            $scope.contactFormUrl = "";
+            $scope.progressFormUrl = "";
         }
 
         $scope.deleteProgress = function(progressId) {
-            Contacts.deleteContact(progressId);
+            Progress.deleteProgress(progressId);
         }
     })
     .controller("NewContactController", function($scope, $location, Contacts) {
