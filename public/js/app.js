@@ -176,7 +176,7 @@ angular.module("contactsApp", ['ngRoute'])
         $scope.saveProgress = function(progressReport) {
             Progress.createProgressReport(progressReport).then(function(doc) {
                 var progressFormUrl = "/progress/" + doc.data._id;
-                $location.path(contactUrl);
+                $location.path(progressFormUrl);
             }, function(response) {
                 alert(response);
             });
