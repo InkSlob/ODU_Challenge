@@ -160,8 +160,8 @@ angular.module("contactsApp", ['ngRoute'])
             $scope.contactFormUrl = "";
         }
 
-        $scope.deleteContact = function(contactId) {
-            Contacts.deleteContact(contactId);
+        $scope.deleteContact = function(progressId) {
+            Contacts.deleteContact(progressId);
         }
 		
 		
