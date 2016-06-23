@@ -30,13 +30,11 @@ angular.module("contactsApp", ['ngRoute'])
                 controller: "EditProgressController",
                 templateUrl: "progress.html"
             })
-			// end add
             .otherwise({
                 redirectTo: "/"
             })
     })
 	 .service("Progress", function($http) {
-		 
 		   this.getProgressReports = function() {
             return $http.get("/progress").
                 then(function(response) {
@@ -62,28 +60,7 @@ angular.module("contactsApp", ['ngRoute'])
                     alert("Error finding this contact.");
                 });
         }
-		this.editProgressReport = function(progressReport) {
-             var url = "/progress/" + progressId;
-            console.log(progress._id);
-            return $http.put(url, p).
-                then(function(response) {
-                    return response;
-                }, function(response) {
-                    alert("Error editing this contact.");
-                    console.log(response);
-                });
-        }
-        this.deleteProgressReport = function(progressId) {
-             var url = "/progress/" + progressId;
-            return $http.delete(url).
-                then(function(response) {
-                    return response;
-                }, function(response) {
-                    alert("Error deleting this contact.");
-                    console.log(response);
-                });
-        }
-	 })
+    })
     .service("Contacts", function($http) {
         this.getContacts = function() {
             return $http.get("/contacts").
@@ -198,7 +175,6 @@ angular.module("contactsApp", ['ngRoute'])
             $scope.editMode = true;
             $scope.contactFormUrl = "contact-form.html";
         }
-		
 
         $scope.back = function() {
             $scope.editMode = false;
