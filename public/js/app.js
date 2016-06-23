@@ -21,7 +21,6 @@ angular.module("contactsApp", ['ngRoute'])
                 controller: "EditContactController",
                 templateUrl: "contact.html"
             })
-			// added by jesse 6/22
 			.when("/new/progress", {
 				controller: "NewProgressReportController",
 				templateUrl: "progress-form.html"
@@ -148,13 +147,11 @@ angular.module("contactsApp", ['ngRoute'])
             $scope.editMode = false;
             $scope.progressFormUrl = "";
         } 
-		
 		 $scope.saveProgress = function(progressReport) {
             Progress.editProgress(progressReport);
             $scope.editMode = false;
             $scope.progressFormUrl = "";
         }
-
         $scope.deleteProgress = function(progressId) {
             Progress.deleteProgress(progressId);
         }
@@ -179,7 +176,7 @@ angular.module("contactsApp", ['ngRoute'])
         $scope.saveProgress = function(progressReport) {
             Progress.createProgress(progressReport).then(function(doc) {
                 var progressFormUrl = "/progress/" + doc.data._id;
-                $location.path(progressFormUrl);
+                $location.path(contactUrl);
             }, function(response) {
                 alert(response);
             });
@@ -191,23 +188,19 @@ angular.module("contactsApp", ['ngRoute'])
         }, function(response) {
             alert(response);
         });
-
         $scope.toggleEdit = function() {
             $scope.editMode = true;
             $scope.contactFormUrl = "contact-form.html";
         }
-
         $scope.back = function() {
             $scope.editMode = false;
             $scope.contactFormUrl = "";
         }
-
         $scope.saveContact = function(contact) {
             Contacts.editContact(contact);
             $scope.editMode = false;
             $scope.contactFormUrl = "";
         }
-
         $scope.deleteContact = function(contactId) {
             Contacts.deleteContact(contactId);
         }
