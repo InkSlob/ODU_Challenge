@@ -174,14 +174,14 @@ angular.module("contactsApp", ['ngRoute'])
             });
         }
     })
-	.controller("NewProgressController", function($scope, $location, Contacts) {
+	.controller("NewProgressController", function($scope, $location, Progress) {
         $scope.back = function() {
             $location.path("#/");
         }
-        $scope.saveContact = function(contact) {
-            Contacts.createContact(contact).then(function(doc) {
-                var contactUrl = "/contact/" + doc.data._id;
-                $location.path(contactUrl);
+        $scope.saveProgress = function(progressReport) {
+            Progress.createProgress(progressReport).then(function(doc) {
+                var progressFormUrl = "/progress/" + doc.data._id;
+                $location.path(progressFormUrl);
             }, function(response) {
                 alert(response);
             });
