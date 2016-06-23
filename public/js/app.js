@@ -26,7 +26,7 @@ angular.module("contactsApp", ['ngRoute'])
 				controller: "NewProgressReportController",
 				templateUrl: "progress-form.html"
 			})
-			 .when("/progress/:progessId", {
+			 .when("/progress/:progressId", {
                 controller: "EditProgressController",
                 templateUrl: "progress.html"
             })
