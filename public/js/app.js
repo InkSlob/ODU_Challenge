@@ -137,7 +137,7 @@ angular.module("contactsApp", ['ngRoute'])
 		$scope.progressReports = progressReports.data;
     })
 	 .controller("EditProgressController", function($scope, $routeParams, Progress) {
-        Progress.getProgressReport($routeParams.progessId).then(function(doc) {
+        Progress.getProgressReport($routeParams.progressId).then(function(doc) {
             $scope.progressReport = doc.data;
         }, function(response) {
             alert(response);
