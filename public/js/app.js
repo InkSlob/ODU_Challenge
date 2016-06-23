@@ -37,14 +37,14 @@ angular.module("contactsApp", ['ngRoute'])
     })
 	 .service("Progress", function($http) {
 		 
-		   //this.getProgressReports = function() {
-           // return $http.get("/progress").
-          //      then(function(response) {
-          //          return response;
-         //       }, function(response) {
-          //          alert("Error finding contacts.");
-          //      });
-       // }
+		   this.getProgressReports = function() {
+            return $http.get("/progress").
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error finding contacts.");
+                });
+        }
 		   this.createProgressReport = function(progressReport) {
             return $http.post("/progress", progressReport).
                 then(function(response) {
@@ -53,7 +53,6 @@ angular.module("contactsApp", ['ngRoute'])
                     alert("Error creating contact.");
                 });
         }
-		
 		 this.getProgressReport = function(progressId) {
             var url = "/progress/" + progressId;
             return $http.get(url).
