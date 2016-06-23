@@ -27,7 +27,7 @@
   <h3> Progress Reports </h3>
    <table class="table table-hover">
     <tbody>
-      <tr ng-repeat="progressReport in progressReports" style="cursor:pointer">
+      <tr ng-repeat="progressReport in progressReports | orderBy:'dateMade'" style="cursor:pointer">
         <td>
           <a ng-href="#/progress/{{progressReport._id}}">Group: &nbsp {{ progressReport.GroupName }} &nbsp &nbsp &nbsp &nbsp Date Created: {{progressReport.dateMade}} </a>
         </td>
