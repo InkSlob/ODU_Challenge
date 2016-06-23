@@ -174,7 +174,7 @@ angular.module("contactsApp", ['ngRoute'])
             });
         }
     })
-	.controller("NewProgressController", function($scope, $location, Progress) {
+	.controller("NewProgressReportController", function($scope, $location, Progress, Contacts) {
         $scope.back = function() {
             $location.path("#/");
         }
