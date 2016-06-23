@@ -60,6 +60,27 @@ angular.module("contactsApp", ['ngRoute'])
                     alert("Error finding this contact.");
                 });
         }
+		this.editProgressReport = function(progressReport) {
+            var url = "/progress/" + progress._id;
+            console.log(progress._id);
+            return $http.put(url, progress).
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error editing this contact.");
+                    console.log(response);
+                });
+        }
+        this.deleteProgressReport = function(progressId) {
+            var url = "/progress/" + progressId;
+            return $http.delete(url).
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error deleting this contact.");
+                    console.log(response);
+                });
+        }
     })
     .service("Contacts", function($http) {
         this.getContacts = function() {
