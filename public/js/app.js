@@ -209,22 +209,13 @@ angular.module("contactsApp", ['ngRoute'])
 		this.contest = themes;
 	})
 	
-	var themes = [
-	  {
-		name: 'Object Recognition',
-		description: 'Best Object Identifier:  Create the best object identifier where the model should accept raw video footage or pictures and output what was seen.',
-		image: 'birdsEyeConstruction.jpg',
-	  },
-	  {
-		name: 'Histogram',
-		description: 'Summarize pictures over a 4 hour (minimum) of imagery into a short summary, photo collage, or other useful representation. Including meta-data is a plus.',
-		image: 'histogram.jpg',
-	  },
-	  {
-		name: 'Wild Card',
-		description: 'What can you do with this video that you think is useful and aligns with the initiative? This is where you can show the judges things they may not have considered. Think out of the box and and help create something that enhances the construction industry video analysis platform.',
-		image: 'wild.jpg',
-	  },	
-	  ];
+	var themes = {
+		description1: 'Best Object Identifier:  Create the best object identifier where the model should accept raw video footage or pictures and output what was seen.',
+		image1: 'birdsEyeConstruction.jpg',
+		description2: 'Summarize pictures over a 4 hour (minimum) of imagery into a short summary, photo collage, or other useful representation. Including meta-data is a plus.',
+		image2: 'histogram.jpg',
+	    description3: 'What can you do with this video that you think is useful and aligns with the initiative? This is where you can show the judges things they may not have considered. Think out of the box and and help create something that enhances the construction industry video analysis platform.',
+		image3: 'wild.jpg',
+	  };
 	
 	

@@ -52,25 +52,15 @@
 	</section>
 	<div class="panel" ng-show="tab"===1">
 	  <h4>Object Recognition</h4>
-	  <p> {{challenge.contest.description[0]}} </p>
+	  <p> {{challenge.contest.description1}} </p>
 	</div>  
 	<div class="panel" ng-show="tab"===2">
 	  <h4>Object Recognition</h4>
-	  <p> {{challenge.contest.description[1]}} </p>
+	  <p> {{challenge.contest.description2}} </p>
 	</div>
-	<div class="panel" ng-show="tab"===1">
+	<div class="panel" ng-show="tab"===3">
 	  <h4>Object Recognition</h4>
-	  <p> {{challenge.contest.description[2]}} </p>
+	  <p> {{challenge.contest.description3}} </p>
 	</div>
-	  
-    <div ng-repeat="cont in challenge.contest">
-	  <table border ="1" style="width:30%">
-	    <tr>
-		  <td> <img ng-src="{{cont.image}}"/> </td>
-          <td> {{cont.name}} </td>
-	     
-		</tr>
-	  </table>
-    </div>
   </body>
 </html>
