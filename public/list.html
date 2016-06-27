@@ -38,9 +38,9 @@
   <br> 
 </div>
 <body ng-controller="ChallengeThemes as challenge">
-  <div ng-repeat="contest in challenge.theme">
-    <h1> {{contest.name}} </h1>
-	<p>  {{contest.description}} </p>
+  <div>  
+    <h1> {{challenge.contest[0].name}} </h1>
+	<p>  {{challenge.contest[0].description}} </p>
   </div>
 </body>
 
