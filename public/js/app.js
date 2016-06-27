@@ -207,7 +207,8 @@ angular.module("contactsApp", ['ngRoute'])
     })
 	.controller('ChallengeThemes', function(){
 		this.contest = themes;
-	});
+	})
+	
 	var themes = [
 	  {
 		name: 'Object Recognition',
@@ -220,7 +221,7 @@ angular.module("contactsApp", ['ngRoute'])
 	  {
 		name: 'Wild Card',
 		description: 'What can you do with this video that you think is useful and aligns with the initiative? This is where you can show the judges things they may not have considered. Think out of the box and and help create something that enhances the construction industry video analysis platform.',
-	  }	
+	  },	
 	  ];
 	
 	
