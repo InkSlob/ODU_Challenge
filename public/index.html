@@ -41,5 +41,10 @@
     <!-- Dynamically render templates -->
     <div class="container" ng-view>
     </div>
+	<div ng-controller="ChallengeThemes as challenges">
+	  <h3> {{challenges.challenge.name}} </h3>
+	  <h3> ${{challenges.challenge.bounty}} </h3>
+	  <p> {{challenges.challenge.description}} </p>
+	</div>
   </body>
 </html>

@@ -204,4 +204,14 @@ angular.module("contactsApp", ['ngRoute'])
         $scope.deleteContact = function(contactId) {
             Contacts.deleteContact(contactId);
         }
-    });
+    })
+	.controller('ChallengeThemes', function(){
+		this.challenge = cameravision;
+	})
+	var cameravision = {
+		name: 'recognizeObjects',
+		bounty: 500,
+		description: 'Best Object Identifier:  Create the best object identifier where the model should accept raw video footage or pictures and output what was seen.',
+	};
+	
+	
