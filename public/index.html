@@ -41,11 +41,20 @@
     <!-- Dynamically render templates -->
     <div class="container" ng-view>
     </div>
-	<div ng-controller="ChallengeThemes as challenges">  
-	  <p ng-repeat="contest in challenges">
-	    <h3> Challenge Title: {{contest.name}} </h3>
-	    <p> {{contest.description}} </p>
-	  </p>
+	
+	<div class="container">
+    <table class="table table-hover"> 
+    <tbody ng-controller="ChallengeThemes as challenges">
+      <tr ng-repeat="contest in challenges" style="cursor:pointer">
+        <td>
+          Challenge Title: {{contest.name}} 
+        </td>
+		<td>
+		  {{contest.description}}
+		</td>
+      </tr>
+    </tbody>
+    </table> 
 	</div>
   </body>
 </html>
