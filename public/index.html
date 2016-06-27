@@ -50,7 +50,19 @@
 	  </ul>
 	  {{tab}}
 	</section>
-	
+	<div class="panel" ng-show="tab"===1">
+	  <h4>Object Recognition</h4>
+	  <p> {{challenge.contest.description[0]}} </p>
+	</div>  
+	<div class="panel" ng-show="tab"===2">
+	  <h4>Object Recognition</h4>
+	  <p> {{challenge.contest.description[1]}} </p>
+	</div>
+	<div class="panel" ng-show="tab"===1">
+	  <h4>Object Recognition</h4>
+	  <p> {{challenge.contest.description[2]}} </p>
+	</div>
+	  
     <div ng-repeat="cont in challenge.contest">
 	  <table border ="1" style="width:30%">
 	    <tr>
