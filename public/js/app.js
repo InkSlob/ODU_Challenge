@@ -206,11 +206,11 @@ angular.module("contactsApp", ['ngRoute'])
         }
     })
 	.controller('ChallengeThemes', function(){
-		this.challenge = cameravision;
+		this.contest = themes;
 	})
-	var cameravision = {
-		name: 'recognizeObjects',
-		bounty: 500,
+	var themes = {
+		name: 'Object Recognition',
+		bounty: 500.00,
 		description: 'Best Object Identifier:  Create the best object identifier where the model should accept raw video footage or pictures and output what was seen.',
 	};
 	
