@@ -41,10 +41,11 @@
     <!-- Dynamically render templates -->
     <div class="container" ng-view>
     </div>
-	<div ng-controller="ChallengeThemes as challenges">
-	  <h3> {{challenges.contest.name}} </h3>
-	  <h3> ${{challenges.contest.bounty}} </h3>
-	  <p> {{challenges.contest.description}} </p>
-	</div>
+	<body ng-controller="ChallengeThemes as challenges">
+	  <div ng-repeat="contest in challenges">
+	    <h3> Challenge Title: {{contest.name}} </h3>
+	    <p> {{contest.description}} </p>
+	  </div>
+	</body>
   </body>
 </html>
