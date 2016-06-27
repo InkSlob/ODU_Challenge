@@ -42,6 +42,9 @@
     <div class="container" ng-view>
     </div>
 	
-	
+    <div ng-controller="ChallengeThemes as challenge">  
+      <h1> {{challenge.contest[0].name}} </h1>
+	  <p>  {{challenge.contest[0].description}} </p>
+    </div>
   </body>
 </html>
