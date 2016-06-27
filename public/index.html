@@ -41,9 +41,11 @@
     <!-- Dynamically render templates -->
     <div class="container" ng-view>
     </div>
-	<div ng-controller="ChallengeThemes as challenges"  ng-repeat="contest in challenges">
+	<div ng-controller="ChallengeThemes as challenges">  
+	  <p ng-repeat="contest in challenges">
 	    <h3> Challenge Title: {{contest.name}} </h3>
 	    <p> {{contest.description}} </p>
+	  </p>
 	</div>
   </body>
 </html>
