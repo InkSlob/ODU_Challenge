@@ -42,13 +42,13 @@
     <div class="container" ng-view>
     </div>
 	
-	<section>
+	<section ng-init="tab = 1">
 	  <ul class="nav nav-pills">
 	    <li> <a href ng-click="tab = 1">Object Recognition</a> </li>
 	    <li> <a href ng-click="tab = 2">Histogram</a> </li>
 	    <li> <a href ng-click="tab = 3">Wild Card</a> </li>
 	  </ul>
-	  {{tab}}
+	
 	</section>
 	<div class="panel" ng-show="tab"===1">
 	  <h4>Object Recognition</h4>
