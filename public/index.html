@@ -44,10 +44,11 @@
 	
 	<section>
 	  <ul class="nav nav-pills">
-	    <li> <a href>Object Recognition</a> </li>
-	    <li> <a href>Histogram</a> </li>
-	    <li> <a href>Wild Card</a> </li>
+	    <li> <a href ng-click="tab = 1">Object Recognition</a> </li>
+	    <li> <a href ng-click="tab = 2">Histogram</a> </li>
+	    <li> <a href ng-click="tab = 3">Wild Card</a> </li>
 	  </ul>
+	  {{tab}}
 	</section>
 	
     <div ng-repeat="cont in challenge.contest">
