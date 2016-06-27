@@ -207,7 +207,7 @@ angular.module("contactsApp", ['ngRoute'])
     })
 	.controller('ChallengeThemes', function(){
 		this.contest = themes;
-	})
+	});
 	var themes = [
 	  {
 		name: 'Object Recognition',
