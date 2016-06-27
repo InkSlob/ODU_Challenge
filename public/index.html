@@ -48,18 +48,17 @@
 	    <li> <a href ng-click="tab = 2">Histogram</a> </li>
 	    <li> <a href ng-click="tab = 3">Wild Card</a> </li>
 	  </ul>
-	
 	</section>
-	<div class="panel" ng-show="tab"===1">
+	<div class="panel" ng-show="tab===1">
 	  <h4>Object Recognition</h4>
 	  <p> {{challenge.contest.description1}} </p>
 	</div>  
-	<div class="panel" ng-show="tab"===2">
-	  <h4>Object Recognition</h4>
+	<div class="panel" ng-show="tab===2">
+	  <h4>Histogram</h4>
 	  <p> {{challenge.contest.description2}} </p>
 	</div>
-	<div class="panel" ng-show="tab"===3">
-	  <h4>Object Recognition</h4>
+	<div class="panel" ng-show="tab===3">
+	  <h4>Wild Card</h4>
 	  <p> {{challenge.contest.description3}} </p>
 	</div>
   </body>
