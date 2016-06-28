@@ -41,6 +41,18 @@ angular.module("contactsApp", ['ngRoute'])
 					}
                 }
             })
+			.when("/progress_front_page", {
+                templateUrl: "progress_front_page.html",
+                controller: "ListController",
+                resolve: {
+                    contacts: function(Contacts) {
+                        return Contacts.getContacts();
+                    },
+					progressReports: function(Progress) {
+						return Progress.getProgressReports();
+					}
+                }
+            })
             .otherwise({
                 redirectTo: "/"
             })
