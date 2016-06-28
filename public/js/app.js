@@ -32,11 +32,6 @@ angular.module("contactsApp", ['ngRoute'])
 			.when("/groups", {
 				templateUrl: "groups.html",
                 controller: "ListController",
-                resolve: {
-                    contacts: function(Contacts) {
-                        return Contacts.getContacts();
-                    }
-                }
 			})
             .otherwise({
                 redirectTo: "/"

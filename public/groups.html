@@ -2,11 +2,6 @@
 <div class = "row">
   <div class="col-md-6">
     <img src="odu_logo.gif" alt="Lion Logo" style="width:152px;height:114px;">
-    <h3>Introduction</h3>
-	<p>Netarus is working with ODU’s Computer Science department to share data collected from its HoistCam platform.  HoistCam collects aerial footage similar to a drone, but is mounted onto equipment such as a tower crane.</p>
-
-	
-	<h3>Groups</h3>
   </div>
   <div class="col-md-3">
     <a style="margin-top:20px" class="btn btn-default" href="#/new/contact">New Group</a>
@@ -27,16 +22,4 @@
       </tr>
     </tbody>
   </table> 
-  <h3> Progress Reports </h3>
-   <table class="table table-hover">
-    <tbody>
-      <tr ng-repeat="progressReport in progressReports | orderBy:'dateMade'" style="cursor:pointer">
-        <td>
-          <a ng-href="#/progress/{{progressReport._id}}">Group: &nbsp {{ progressReport.GroupName }} &nbsp &nbsp &nbsp &nbsp Date Created: {{progressReport.dateMade}} </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  <br> 
 </div>
