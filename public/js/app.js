@@ -226,7 +226,8 @@ angular.module("contactsApp", ['ngRoute'])
 		Groups.getContacts($routeParams.contactId).then(function(doc) {
             $scope.contact = doc.data;
         }, function(response) {
-            alert(response);	
+            alert(response);
+		)
 	})
 	var themes = {
 		description1: 'Best Object Identifier:  Create the best object identifier where the model should accept raw video footage or pictures and output what was seen.',
