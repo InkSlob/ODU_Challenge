@@ -23,12 +23,7 @@
     </p>
     <p>
       <label>Key Item 3 Accomplished</label>
-      <!--<input id="name" class="form-control" type="text" ng-model="progressReport.key3">  -->
-      <select name="cars" multiple>
-        <option value="object">Object Recognition</option>
-        <option value="histogram">Histogram</option>
-        <option value="wild">Wild Card</option>
-      </select>
+      <input id="name" class="form-control" type="text" ng-model="progressReport.key3">
     </p>
     <p>
       <label>Goals for Tomorrow*</label>
@@ -36,7 +31,18 @@
     </p>
     <p>
       <label>Challenge Focus</label>
-      <input id="name" class="form-control" type="text" ng-model="progressReport.challenge">
+      <label>
+        <input type="radio" ng-model="progressReport.challenge" value="Object Recognition">
+        Object Recognition
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="progressReport.challenge" value="Histogram">
+        Histogram
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="progressReport.challenge" value="Wild Card">
+        Wild Card
+      </label><br/>
     </p>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="saveProgress(progressReport)">Save</button>
