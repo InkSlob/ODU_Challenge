@@ -25,10 +25,14 @@ angular.module("contactsApp", ['ngRoute'])
 				controller: "NewProgressReportController",
 				templateUrl: "progress-form.html"
 			})
-			 .when("/progress/:progressId", {
+			.when("/progress/:progressId", {
                 controller: "EditProgressController",
                 templateUrl: "progress.html"
             })
+			.when("/groups", {
+				controller: "ListController",
+				templateUrl: "groups.html"
+			})
             .otherwise({
                 redirectTo: "/"
             })
