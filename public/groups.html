@@ -4,7 +4,7 @@
     <tbody>
       <tr ng-repeat="contact in contacts | orderBy:'GroupName'" style="cursor:pointer">
         <td>
-          <a ng-href="contact.html {{contact._id}}">{{ contact.GroupName }}</a>
+          <a ng-href="#/contact/{{contact._id}}">{{ contact.GroupName }}</a>
         </td>
       </tr>
     </tbody>
