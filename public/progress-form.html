@@ -6,32 +6,37 @@
 <div class="container">
   <div>
     <p>
-      <label>Group Name*</label> 
-      <input id="name" class="form-control" type="text"datetime="yyyy-MM-dd HH:mm:ss" ng-model="progressReport.GroupName" required> 
+      <label>Group Name*</label>
+      <input id="name" class="form-control" type="text"datetime="yyyy-MM-dd HH:mm:ss" ng-model="progressReport.GroupName" required>
     </p>
     <p>
-      <label>Date*</label> 
-      <input id="name" class="form-control" type="text" ng-model="progressReport.dateMade" required> 
+      <label>Date*</label>
+      <input id="name" class="form-control" type="text" ng-model="progressReport.dateMade" required>
     </p>
     <p>
-      <label>Key Item 1 Accomplished*</label> 
-      <input id="name" class="form-control" type="text" ng-model="progressReport.key1" required> 
+      <label>Key Item 1 Accomplished*</label>
+      <input id="name" class="form-control" type="text" ng-model="progressReport.key1" required>
     </p>
     <p>
-      <label>Key Item 2 Accomplished</label> 
-      <input id="name" class="form-control" type="text" ng-model="progressReport.key2"> 
+      <label>Key Item 2 Accomplished</label>
+      <input id="name" class="form-control" type="text" ng-model="progressReport.key2">
     </p>
     <p>
-      <label>Key Item 3 Accomplished</label> 
-      <input id="name" class="form-control" type="text" ng-model="progressReport.key3"> 
+      <label>Key Item 3 Accomplished</label>
+      <!--<input id="name" class="form-control" type="text" ng-model="progressReport.key3">  -->
+      <select name="cars" multiple>
+        <option value="object">Object Recognition</option>
+        <option value="histogram">Histogram</option>
+        <option value="wild">Wild Card</option>
+      </select>
     </p>
     <p>
-      <label>Goals for Tomorrow*</label> 
-      <input id="name" class="form-control" type="text" ng-model="progressReport.tomorrow" required> 
+      <label>Goals for Tomorrow*</label>
+      <input id="name" class="form-control" type="text" ng-model="progressReport.tomorrow" required>
     </p>
     <p>
-      <label>Current Challenge Focus</label> 
-      <input id="name" class="form-control" type="text" ng-model="progressReport.challenge"> 
+      <label>Challenge Focus</label>
+      <input id="name" class="form-control" type="text" ng-model="progressReport.challenge">
     </p>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="saveProgress(progressReport)">Save</button>
