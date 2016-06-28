@@ -30,8 +30,13 @@ angular.module("contactsApp", ['ngRoute'])
                 templateUrl: "progress.html"
             })
 			.when("/groups", {
-				controller: "EditContactController",
-				templateUrl: "groups.html"
+				templateUrl: "groups.html",
+                controller: "ListController",
+                resolve: {
+                    contacts: function(Contacts) {
+                        return Contacts.getContacts();
+                    }
+                }
 			})
             .otherwise({
                 redirectTo: "/"
