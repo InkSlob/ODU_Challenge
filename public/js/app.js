@@ -239,7 +239,7 @@ angular.module("contactsApp", ['ngRoute'])
 		description2: 'Summarize pictures over a 4 hour (minimum) of imagery into a short summary, photo collage, or other useful representation. Including meta-data is a plus.',
 		image2: 'histogram.jpg',
 	    description3: 'What can you do with this video that you think is useful and aligns with the initiative? This is where you can show the judges things they may not have considered. Think out of the box and and help create something that enhances the construction industry video analysis platform.',
-		image3: 'wild.jpg',
+		image3: 'HoistCamZoom.JPG',
 	  };
 	
 	
