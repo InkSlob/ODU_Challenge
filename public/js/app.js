@@ -53,6 +53,10 @@ angular.module("contactsApp", ['ngRoute'])
 					}
                 }
             })
+      .when("#/general_info", {
+              templateUrl: "general_info.html",
+              controller: "ListController"
+            })
             .otherwise({
                 redirectTo: "/"
             })
@@ -66,7 +70,7 @@ angular.module("contactsApp", ['ngRoute'])
                     alert("Error finding contacts.");
                 });
         }
-		   this.createProgressReport = function(progressReport) { 
+		   this.createProgressReport = function(progressReport) {
             return $http.post("/progress", progressReport).
                 then(function(response) {
                     return response;
@@ -170,7 +174,7 @@ angular.module("contactsApp", ['ngRoute'])
         $scope.back = function() {
             $scope.editMode = false;
             $scope.progressFormUrl = "";
-        } 
+        }
 		 $scope.saveProgress = function(progressReport) {
             Progress.editProgress(progressReport);
             $scope.editMode = false;
@@ -232,7 +236,7 @@ angular.module("contactsApp", ['ngRoute'])
 	.controller('ChallengeThemes', function(){
 		this.contest = themes;
 	})
-	
+
 	var themes = {
 		description1: 'Best Object Identifier:  Create the best object identifier where the model should accept raw video footage or pictures and output what was seen.',
 		image1: 'birdsEyeConstruction.jpg',
@@ -241,5 +245,3 @@ angular.module("contactsApp", ['ngRoute'])
 	    description3: 'What can you do with this video that you think is useful and aligns with the initiative? This is where you can show the judges things they may not have considered. Think out of the box and and help create something that enhances the construction industry video analysis platform.',
 		image3: 'HoistCamZoom.JPG',
 	  };
-	
-	
