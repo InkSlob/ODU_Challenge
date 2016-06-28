@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel="stylesheet" type="text/css" href="style_gen_info.css">-->
+</head>
+
+<body ng-controller="ChallengeThemes as challenge">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-brand" href="#/">ODU Computer Science Summer Research Initiative</div>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#/">Home</a></li>
+    <li><a href="#/groups">Groups</a></li>
+    <li><a href="#/progress_front_page">Reporting</a></li>
+    <li><a href="general_info.html">General Info</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Dynamically render templates -->
+  <div class="container">
+  <div ng-view>
+  </div>
+  </div>
+
+
+  <h1>General Information and Challenge Details</h1>
+  <h2>Deliverables</h2>
+  <dl>
+    <dt>Powerpoint presentation summarizing results</dt>
+    <dd>- How valuable is this data?</dd>
+    <dd>- How is this data used?</dd>
+    <dt>All code</dt>
+    <dt>Extensive README that explains how to run what you have done.</dt>
+  </dl>
+  <h2>Judging</h2>
+  <p>A panel of at least 3 judges will evaluate all submissions and rule on the submission that
+     produces the best value to the end user.  Judging will be as follows:</p>
+  <ul>
+    <li>Creativity - how much “outside the box” thinking was used to:
+      <ul>
+        <li>Define the deliverable</li>
+        <li>Implement the solution</li>
+     </ul>
+   </li>
+   <li>Usefulness - how valuable and useful is the resulting analysis from the data supplied</li>
+   <li>Efficiency - Speed at which the resulting analysis can be rendered in a demonstrable format.</li>
+   <li>Costs
+     <ul>
+       <li>On-going hardware infrastructure costs to support the analytics delivered</li>
+       <li>Ongoing software licensing costs to support the analytics delivered</li>
+    </ul>
+  </li>
+
+
+</body>
