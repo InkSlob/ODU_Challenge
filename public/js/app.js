@@ -31,7 +31,7 @@ angular.module("contactsApp", ['ngRoute'])
             })
 			.when("/groups", {
 				templateUrl: "groups.html",
-                controller: "ListController",
+                controller: "ListGroups", 
 			})
             .otherwise({
                 redirectTo: "/"
@@ -46,7 +46,7 @@ angular.module("contactsApp", ['ngRoute'])
                     alert("Error finding contacts.");
                 });
         }
-		   this.createProgressReport = function(progressReport) {
+		   this.createProgressReport = function(progressReport) { 
             return $http.post("/progress", progressReport).
                 then(function(response) {
                     return response;
@@ -133,6 +133,16 @@ angular.module("contactsApp", ['ngRoute'])
                 });
         }
     })
+	.service("Groups", function($http) {
+		this.getContacts = function() {
+            return $http.get("/contacts").
+                then(function(response) {
+                    return response;
+                }, function(response) {
+                    alert("Error finding contacts.");
+                });
+		}
+	})
 	.controller("ListController",function(contacts,progressReports, $scope) {
         $scope.contacts = contacts.data;
 		$scope.progressReports = progressReports.data;
@@ -212,7 +222,12 @@ angular.module("contactsApp", ['ngRoute'])
 	.controller('ChallengeThemes', function(){
 		this.contest = themes;
 	})
-	
+	.controller('ListGroups', function($scope, $routeParams, Groups) {
+		Groups.getContacts($routeParams.contactId).then(function(doc) {
+            $scope.contact = doc.data;
+        }, function(response) {
+            alert(response);	
+	})
 	var themes = {
 		description1: 'Best Object Identifier:  Create the best object identifier where the model should accept raw video footage or pictures and output what was seen.',
 		image1: 'birdsEyeConstruction.jpg',
