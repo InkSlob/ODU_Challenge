@@ -42,26 +42,6 @@
     <div class="container">
 		<div ng-view>
 		</div>
-		<h3> Explore the Challenge Topics! </h3>
-			<section ng-init="tab = 1">
-		  <ul class="nav nav-pills">
-			<li> <a href ng-click="tab = 1">Object Recognition</a> </li>
-			<li> <a href ng-click="tab = 2">Histogram</a> </li>
-			<li> <a href ng-click="tab = 3">Wild Card</a> </li>
-		  </ul>
-		</section>
-		<div class="panel" ng-show="tab===1">
-		  <img ng-src="{{challenge.contest.image1}}"/>
-		  <p> {{challenge.contest.description1}} </p>
-		</div>  
-		<div class="panel" ng-show="tab===2">
-		  <img ng-src="{{challenge.contest.image2}}"/>
-		  <p> {{challenge.contest.description2}} </p>
-		</div>
-		<div class="panel" ng-show="tab===3">
-		  <img ng-src="{{challenge.contest.image3}}"/>
-		  <p> {{challenge.contest.description3}} </p>
-		</div>
 		</div>
 	
 
