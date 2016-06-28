@@ -30,9 +30,17 @@ angular.module("contactsApp", ['ngRoute'])
                 templateUrl: "progress.html"
             })
 			.when("/groups", {
-				templateUrl: "groups.html",
-                controller: "ListGroups", 
-			})
+                templateUrl: "list.html",
+                controller: "ListController",
+                resolve: {
+                    contacts: function(Contacts) {
+                        return Contacts.getContacts();
+                    },
+					progressReports: function(Progress) {
+						return Progress.getProgressReports();
+					}
+                }
+            })
             .otherwise({
                 redirectTo: "/"
             })
