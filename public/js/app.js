@@ -53,7 +53,7 @@ angular.module("contactsApp", ['ngRoute'])
 					}
                 }
             })
-      .when("#/general_info", {
+      .when("/general_info", {
               templateUrl: "general_info.html",
               controller: "ListController"
             })
