@@ -30,7 +30,7 @@ angular.module("contactsApp", ['ngRoute'])
                 templateUrl: "progress.html"
             })
 			.when("/groups", {
-				controller: "ListController",
+				controller: "EditContactController",
 				templateUrl: "groups.html"
 			})
             .otherwise({
