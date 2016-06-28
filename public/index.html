@@ -42,9 +42,7 @@
     <div class="container">
 		<div ng-view>
 		</div>
-	</div>
-  </body>
-  <h3> Explore the Challenge Topics! </h3>
+		<h3> Explore the Challenge Topics! </h3>
 			<section ng-init="tab = 1">
 		  <ul class="nav nav-pills">
 			<li> <a href ng-click="tab = 1">Object Recognition</a> </li>
@@ -63,6 +61,9 @@
 		<div class="panel" ng-show="tab===3">
 		  <img ng-src="{{challenge.contest.image3}}"/>
 		  <p> {{challenge.contest.description3}} </p>
-		
 		</div>
+		</div>
+	
+
+  </body>
 </html>
